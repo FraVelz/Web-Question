@@ -26,7 +26,7 @@
 ![Image from the website](./images/Image4.jpg)
 
 
-link: [Go to the website.](https://divelz.github.io/Web-Question/)
+<!-- link: [Go to the website.](https://divelz.github.io/Web-Question/) -->
 
 **Best regard !!!**
 
