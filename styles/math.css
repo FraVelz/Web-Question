@@ -1,0 +1,32 @@
+/** Fracciones **/
+
+.dibujar.fr {
+    position: relative; margin: auto;
+    left: 0; right: 0; top: 0; bottom: 0;
+
+    padding: 0 10px;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    pointer-events: none;
+}
+
+.dibujar.fr th {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 255, 255, .8);
+    padding: 0 8px;
+}
+
+.dibujar.fr td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/** De: Francisco Velez */

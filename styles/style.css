@@ -1,0 +1,316 @@
+/* ************ Estilos Generales ************ */
+
+*::selection {
+    background-color: rgba(255, 255, 255, .2);
+    color: rgb(255, 165, 0, .75);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    background: linear-gradient( to top, rgb(0, 136, 255), rgba(0, 255, 255, 1));
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-size: 18px;
+
+    transition: all 3s;
+}
+
+/* ************ Encabezado ************ */
+
+.header {
+    width: 90vw; height: 70px;
+    margin:  0 auto;
+    margin-top: 20px;
+    
+    background-color: rgba(0, 0, 0, .85);
+    color: rgb(0, 251, 255, .85);
+
+    border-radius: 20px;
+    font-family: sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#cap1 {
+    width: 64px; height: 37px;
+    background-color: rgb(0, 251, 255, .85);
+    border-radius: 20px;
+}
+
+#cap2 {
+    width: 31px; height: 31px;
+    position: relative;
+    top: 3px; left: 3px;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+}
+
+/* ************ Las preguntas ************ */
+
+.container { margin:  0 auto; }
+
+.form {
+    width: 400px; 
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .75);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.question {
+    color: rgba(0, 255, 255, .8);
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.opc {
+    width: 75%;
+    padding: 10px;
+    margin-top: 13px; 
+    color: rgb(255, 255, 255, .75);
+
+    display: flex;
+    align-items: center;
+}
+
+.opcs {
+    margin: 10px;
+    width: 18px; height: 18px;
+}
+
+/** Todo lo que enpieza por num y * Clase opcs **/
+[id ^= lbl], .opcs {
+    cursor: pointer;
+}
+
+/* ************ Boton de Verificar ************ */
+.buttons {
+    margin: 0 auto; margin-top: 23px;
+    width: 350px; height: 50px;
+    /* background-color: aqua; */
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.verificar, .new {
+    width: 100px; height: 40px;
+
+    background-color: rgba(30, 30, 30, 0.75);
+    transition: box-shadow 0.3s, background-color 1s, color 1s;
+    color: rgba(0, 255, 255, .8);
+    font-size: 18px;
+
+    border-radius: 20px;
+    border: 3px solid rgba(0, 255, 255, .8);
+}
+
+.verificar:hover, .new:hover {
+    box-shadow: inset 0px 0px 8px 2px rgba(0, 255, 255, .8);
+    background-color: rgba(0, 255, 255, .8);
+
+    color:  rgba(30, 30, 30, 0.75);
+    cursor: pointer;
+}
+
+.verificar:active { padding-right: 15px; }
+.new:active { padding-left: 15px; }
+
+
+/* ************ El Mensaje ************ */
+
+.message {
+    display: none;
+    position: fixed;
+    bottom: 50px; left: 10px;
+    width: 40vw; height: 200px;
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.message.open {
+    display: block;
+    opacity: 0;
+    animation: animacion1 1s linear both;
+}
+
+@keyframes animacion1 {
+    0% {
+        opacity: 0;
+        transform: translate(-20%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.message.close {
+    display: block;
+    animation: animacion2 1s linear both;
+}
+
+@keyframes animacion2 {
+    0% {
+        opacity: 1;
+        transform: translate(0);
+    } 
+    
+    100% {
+        opacity: 0;
+        transform: translate(-20%);
+    }
+}
+
+.info {
+    padding: 5px;
+    width: 95%; height: 130px;
+    border: 2px solid rgba(0, 255, 255, .8);
+    border-radius: 20px;
+}
+
+.siguiente {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.siguiente .r, .siguiente .l {
+    width: 40px; height: 25px;
+    cursor: pointer;
+    margin: auto;
+    
+    border: 2px solid rgba(97, 255, 176, 0.8);
+    color: rgba(97, 255, 176, 0.6);
+    transition: all 0.2s;
+}
+
+.siguiente .l {
+    border-radius: 35px 5px 5px 35px;
+}
+.siguiente .r {
+    border-radius: 5px 35px 35px 5px;
+}
+
+.siguiente .r:hover, .siguiente .l:hover {
+    color: rgba(97, 255, 176, 0.8);
+    box-shadow: inset 0px 0px 10px rgba(97, 255, 176, 0.8);
+}
+
+.siguiente .l:active {
+    transform: translateX(-10px);
+}
+
+.siguiente .r:active {
+    transform: translateX(10px);
+}
+
+.title_l, .title_A , .n { cursor: default; }
+
+.info th { padding: 7px 0px; }
+.info td { padding: 6px 10px; }
+
+.n {
+    text-align: center;
+    color: rgba(240, 248, 255, .85); 
+}
+
+.title_l { color: rgba(0, 255, 255, .8); }
+
+
+.title_A a {
+    color: rgba(0, 255, 255, .8);
+    text-decoration: none;
+}
+
+.title_A a:hover { color: rgba(0, 255, 255, .94); }
+.title_A a:active { color: rgba(0, 255, 255, 1); }
+
+.trs_ { transition: all 0.5s; }
+.n { transition: all 0.5s; }
+
+.trs_:hover { background-color: rgba(0, 255, 255, .2); }
+.n:hover { background-color: rgba(0, 255, 255, .4); }
+
+.title_A:active {
+    transform: rotateZ(-8deg);
+}
+
+.cerrar {
+    width: 23px; height: 23px;
+    position: absolute;
+    top: 10px; right: 10px;
+
+    background-color: rgba(255, 0, 0, .7);
+    border-radius: 50%; border: none;
+    cursor: pointer;
+    
+    transition: all 0.5s;
+
+}
+
+.cerrar:hover {
+    background-color: rgba(255, 0, 0, .9);
+}
+
+.f_ {
+    text-align: center;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    .message {
+        width: 60vw;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .message {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .message {
+        width: 85vw;
+    }
+}
+
+/* ************ El Footer ************ */
+
+.footer {
+    width: 90vw; height: 70px;
+    font-size: 20px;
+    
+    margin:  0 auto;
+    margin-top: 20px;
+
+    border-radius: 20px 20px 0 0;
+    background-color: rgba(0, 0, 0, .75);
+    color: rgb(169, 250, 250);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.marquee { width: 80%; pointer-events: none; }
+
+/** De: Francisco Velez **/
